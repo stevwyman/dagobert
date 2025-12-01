@@ -1,0 +1,47 @@
+services:
+  beta-app:
+    image: localhost/dagobert:local
+    container_name: beta
+    restart: 'never'
+    volumes:
+      - local_data:/data/market_analysis
+    ports:
+      - "28001:8001"
+    networks:
+      - default_net
+    environment:
+      MYSQL_ENGINE: ${MYSQL_ENGINE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    env_file:
+     - .env
+    depends_on:
+      - mariadb
+  
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    restart: always
+    volumes:
+      - local_mysql:/var/lib/mysql:Z
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    env_file:
+     - .env
+    ports:
+      - "23306:3306"
+    networks:
+      - default_net
+        
+volumes:
+  local_mysql:
+  local_data:
+
+networks:
+  default_net:
+    driver: bridge
