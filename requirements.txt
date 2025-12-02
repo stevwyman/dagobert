@@ -1,5 +1,4 @@
 django
 django-bootstrap5
-#mysqlclient
-mysql-connector
+mysqlclient
 python-dotenv

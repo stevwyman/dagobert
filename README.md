@@ -39,3 +39,7 @@ python manage.py migrate
 docker build -t stevwyman/market_analysis:local .
 
 podman build -t dagobert:local .
+
+### database details
+
+command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=1000

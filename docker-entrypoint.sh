@@ -1,6 +1,6 @@
 #!/bin/sh
 
-python manage.py makemigrations data
+python manage.py makemigrations beta
 python manage.py migrate
 
 exec "$@"
