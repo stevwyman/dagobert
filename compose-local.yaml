@@ -23,6 +23,14 @@ services:
       mariadb:
         condition: service_healthy
 
+  cron-app:
+    container_name: crontainer
+    image: localhost/crontainer:local
+    networks:
+      - default_net
+    depends_on:
+      - beta-app
+
   mariadb:
     image: mariadb:latest
     container_name: mariadb
@@ -47,6 +55,7 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=1000
         
 volumes:
   local_mysql:

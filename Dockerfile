@@ -20,18 +20,6 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
-# Set the polygon.io API key
-ENV POLYGON_API_KEY=###
-
-# Set the Tiingo API key
-ENV TIINGO_API_KEY=###
-
-# Set the Tiingo API key
-ENV COMWYCA_API_KEY=###
-
-# Set the mongodb host
-ENV MONGODB_HOST=mongo
-
 # Install pip requirements
 COPY requirements.txt .
 RUN pip install --upgrade pip
