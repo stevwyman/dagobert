@@ -18,7 +18,7 @@ jobs:
     steps:
     - name: Set up MySQL
       run: |
-        sudo /etc/init.d/mysql start
+        sudo systemctl start mysql.service
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
@@ -37,5 +37,5 @@ jobs:
         MYSQL_DATABASE: example_database
         MYSQL_USER: example_user
         MYSQL_PASSWORD: example_password
-        MYSQL_HOST: 127.0.0.1
-        MYSQL_PORT: 3306
+        #MYSQL_HOST: 127.0.0.1
+        #MYSQL_PORT: 3306
