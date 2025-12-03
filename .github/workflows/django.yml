@@ -21,6 +21,8 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: example_root_password
           MYSQL_DATABASE: example_database
+          MYSQL_USER: example_user
+          MYSQL_PASSWORD: example_password
         ports: ['3306:3306']
 
     steps:
