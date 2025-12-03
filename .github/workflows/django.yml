@@ -15,6 +15,14 @@ jobs:
       matrix:
         python-version: [3.13]
 
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: example_root_password
+          MYSQL_DATABASE: example_database
+        ports: ['3306:3306']
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -28,3 +36,11 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+      env: 
+        MYSQL_ENGINE: mysql
+        MYSQL_ROOT_PASSWORD: example_root_password
+        MYSQL_DATABASE: example_database
+        MYSQL_USER: example_user
+        MYSQL_PASSWORD: example_password
+        MYSQL_HOST: 127.0.0.1
+        MYSQL_PORT: 3306
