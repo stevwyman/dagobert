@@ -1,6 +1,7 @@
 services:
   beta-app:
-    image: localhost/dagobert:local
+    #image: localhost/dagobert:local
+    image: quay.io/swpm/dagobert
     container_name: beta
     restart: 'never'
     volumes:
