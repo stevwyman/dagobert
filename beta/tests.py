@@ -15,6 +15,6 @@ class Ping(TestCase):
 
         counter = PingCount.get_singleton()
 
-        self.assertEquals(counter.count, 1)
+        self.assertEqual(counter.count, 1)
     
         print("test completed")
