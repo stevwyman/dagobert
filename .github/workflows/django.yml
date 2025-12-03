@@ -35,7 +35,7 @@ jobs:
         MYSQL_ENGINE: mysql
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: example_database
-        MYSQL_USER: example_user
-        MYSQL_PASSWORD: example_password
+        MYSQL_USER: root
+        MYSQL_PASSWORD: root
         #MYSQL_HOST: 127.0.0.1
         #MYSQL_PORT: 3306
