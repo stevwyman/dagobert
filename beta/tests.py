@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from models import PingCount
+from .models import PingCount
 
 # Create your tests here.
 
