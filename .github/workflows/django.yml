@@ -41,6 +41,7 @@ jobs:
         #MYSQL_PORT: 3306
 
   build:
+    needs: test
     env:
       context: .
       image_name: dagobert
