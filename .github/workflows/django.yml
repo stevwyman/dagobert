@@ -39,8 +39,8 @@ jobs:
         MYSQL_ENGINE: mysql
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: example_database
-        MYSQL_USER: example_user
-        MYSQL_PASSWORD: example_password
+        MYSQL_USER: root
+        MYSQL_PASSWORD: root
 
   build:
     needs: test
