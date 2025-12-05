@@ -1,4 +1,8 @@
 name: Django CI
+#
+# Pipeline/Action for running test and, if successful, build the container and push to registry
+# we are using for testing the build in mysql database that comes with the ubuntu release
+# as we are using latest, hence 24, we can use the systemctl command
 
 on:
   push:
@@ -35,8 +39,8 @@ jobs:
         MYSQL_ENGINE: mysql
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: example_database
-        MYSQL_USER: example_user
-        MYSQL_PASSWORD: example_password
+        MYSQL_USER: root
+        MYSQL_PASSWORD: root
 
   build:
     needs: test
